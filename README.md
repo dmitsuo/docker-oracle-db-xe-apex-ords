@@ -45,7 +45,7 @@ set -R +x *.sh
 5. Call installation script with admin privileges with the following command
 
 ```bash
-$ sudo ./000-install-apex-ords.sh
+sudo ./000-install-apex-ords.sh
 ```
 
 This script will do the following:
@@ -60,7 +60,7 @@ It will take from 15 to 30 minutes, depending on your machine and internet speed
 6. Execute the following command with admin privileges to start Oracle Database XE 18c with installed APEX and an ORDS server as a Docker container:
 
 ```bash
-$ sudo ./010-start-db-ords.sh
+sudo ./010-start-db-ords.sh
 ```
 
 7. Go to APEX Admin page, provided by ORDS server in the following URL
