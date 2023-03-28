@@ -68,11 +68,11 @@ $ sudo ./010-start-db-ords.sh
 http://localhost:20231/ords
 ```
 
+In the above URL, "<b>20231</b>" is the default ORDS Server HTTP port, defined in the "<code><b>ORDS_CONTAINER_HTTP_PORT</b></code>" variable, inside <b>[scripts/00-setenv.sh](/scripts/00-setenv.sh)</b> file.
+
 This will lead you to the following screen
 
 ![APEX admin login](/img/apex_admin_login.png)
-
-In the above URL, "<b>20231</b>" is the default ORDS Server HTTP port, defined in the "<code><b>ORDS_CONTAINER_HTTP_PORT</b></code>" variable, inside <b>[scripts/00-setenv.sh](/scripts/00-setenv.sh)</b> file.
 
 The username is "<b>ADMIN</b>" and the password is defined in the "<code><b>APEX_ADMIN_PWD</b></code>" variable, inside <b>[scripts/00-setenv.sh](/scripts/00-setenv.sh)</b> file.
 
