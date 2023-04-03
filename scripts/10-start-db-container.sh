@@ -14,10 +14,10 @@ if [[ $(check_container_status $DB_CONTAINER_NAME) == "$CONTAINER_RUNNING" ]]; t
   myecho "Container database \"$DB_CONTAINER_NAME\" is already running."
   DB_CONTAINER_START_TIME=$(sudo docker inspect --format='{{.Created}}' $DB_CONTAINER_NAME)
 elif [[ $(check_container_status $DB_CONTAINER_NAME) == "$CONTAINER_NOT_RUNNING" ]]; then
-  myecho "Container database \"$DB_CONTAINER_NAME\" is stopped. Initializing..."
+  myecho "Container database \"$DB_CONTAINER_NAME\" is stopped. Initializing. Please, be patient..."
   sudo docker start $DB_CONTAINER_NAME
 else
-  myecho "Container database \"$DB_CONTAINER_NAME\" is not found. Creating and running the container..."
+  myecho "Container database \"$DB_CONTAINER_NAME\" is not found. Creating and running the container. Please, be patient..."
   sudo docker run --name $DB_CONTAINER_NAME -d                                               \
                   -p    $DB_LISTENER_TCP_PORT:1521                                           \
                   -e    ORACLE_PASSWORD=$DB_ADMIN_PWD                                        \
@@ -59,7 +59,7 @@ do
     exit 0     
   else 
     # Se não, imprima uma mensagem de espera e aguarde mais X segundos antes da próxima tentativa     
-    myecho "Attempt $COUNT of $MAX_TRIES: Container database \"$DB_CONTAINER_NAME\" is not ready. Waiting $SECONDS_TO_WAIT seconds..."
+    myecho "Attempt $COUNT of $MAX_TRIES: Container database \"$DB_CONTAINER_NAME\" is not ready. Waiting $SECONDS_TO_WAIT seconds. Please, be patient..."
     sleep $SECONDS_TO_WAIT 
   fi 
 done 

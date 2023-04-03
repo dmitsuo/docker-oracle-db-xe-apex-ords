@@ -21,7 +21,7 @@ elif [[ $(check_container_status $ORDS_CONTAINER_NAME) == "$CONTAINER_NOT_RUNNIN
     sudo docker start $ORDS_CONTAINER_NAME
     ORDS_WAIT_FOR_CONTAINER_TO_FULLY_INITIALIZE=true
 else
-    myecho "ORDS container \"$ORDS_CONTAINER_NAME\" is not found. Creating and running the container..."
+    myecho "ORDS container \"$ORDS_CONTAINER_NAME\" is not found. Creating and running the container. Please, be patient..."
     sudo chown -Rf $ORDS_CONTAINER_USER_UID:$ORDS_CONTAINER_USER_UID $APEX_IMAGES_DIR
     sudo chown -Rf $ORDS_CONTAINER_USER_UID:$ORDS_CONTAINER_USER_UID $ORDS_CONFIG
     sudo chown -Rf $ORDS_CONTAINER_USER_UID:$ORDS_CONTAINER_USER_UID $ORDS_INSTALL_DIR
